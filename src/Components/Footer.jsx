@@ -4,9 +4,25 @@ const Footer = () => {
     return (
         <footer className="relative w-full  min-h-[70vh] overflow-hidden">
             {/* Video Background */}
-            <img src="./home/fbg.png" alt="" className="absolute top-0 left-0 w-full h-full object-cover" />
+            {/* <img src="./home/fbg.png" alt="" className="absolute top-0 left-0 w-full h-full object-cover" /> */}
+            <video
+      src="./home/footer.webm"
+      autoPlay
+      loop
+      muted
+      playsInline
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        zIndex: -1,
+      }}
+    />
             {/* Footer Content */}
-            <div className="relative w-full text-white flex flex-col items-baseline justify-end py-12 min-h-screen">
+            <div className="relative w-full text-white bg-gradient-to-t from-black via-black/50 to-transparent flex flex-col items-baseline justify-end py-12 min-h-screen">
                 <div className="container mx-auto px-6 md:flex flex-wrap justify-between gap-8">
                     {/* About Section */}
                     <div className="flex-1 mb-6 md:mb-0 md:mr-8 m-auto">

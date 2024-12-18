@@ -71,7 +71,15 @@ const Network = () => {
 
   return (
     <div className="marginal">
-      <h1 className="viaoda md:text-4xl text-3xl my-5 text-center md:mb-6">OUR NETWORK</h1>
+      <motion.h1 className="viaoda md:text-4xl text-3xl my-5 text-center md:mb-6"
+       initial={{ opacity: 0, scale: 0.8 }}
+       whileInView={{ opacity: 1, scale: 1 }}
+       viewport={{ once: false }} // Allow the animation to repeat as the card comes into view
+       transition={{
+           duration: 0.5, // Increased duration for smoother transitions
+           ease: 'linear', // Use easeOut for smoother deceleration
+       }}
+      >OUR NETWORK</motion.h1>
       <div className="md:flex justify-between items-center md:h-[70v] w-full">
         {/* Category Buttons */}
         <div className="md:w-[20%] mb-6 h-full flex flex-col justify-center">

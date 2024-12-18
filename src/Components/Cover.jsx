@@ -46,7 +46,7 @@ const Cover = () => {
     <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
     {/* Video background */}
     <video
-      src="./public/home/PRANAV.webm"
+      src="./home/PRANAV.webm"
       autoPlay
       loop
       muted

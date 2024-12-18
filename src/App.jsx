@@ -10,7 +10,7 @@ function App() {
     <div>
       <Navbar />
       <Home />
-      <div className="relative md:mt-[25%] mt-20">
+      <div className="relative md:mt-[17%] mt-20">
         <ContactForm />
         <div className="">
           <Footer />
