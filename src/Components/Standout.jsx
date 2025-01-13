@@ -1,6 +1,30 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import Heading from "./Heading";
 const Standout = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Only trigger once when in view
+    threshold: 0.1, // Trigger when 10% of the element is visible
+  });
+
+  React.useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  const curtainVariants = {
+    hidden: { width: "100%", right: "0%" }, // Start with full width covering the image
+    visible: {
+      width: "0%", // Fully reveal the image
+      transition: {
+        duration: 1.2, // Duration of the animation
+        ease: "easeInOut",
+      },
+    },
+  };
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -18,33 +42,41 @@ const Standout = () => {
 
   return (
     <motion.div
-      className="marginal md:flex justify-center"
+      className="marginal md:flex justify-between"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
-      <motion.div className="md:w-[49%]" variants={childVariants}>
-        <img src="./home/standout.png" alt="Standout" />
-      </motion.div>
+     <motion.div className="md:w-[60%] flex">
+      <div className="w-[50%] relative overflow-hidden">
+        <motion.div
+          className="absolute top-0 left-0 h-full bg-white z-10"
+          ref={ref}
+          initial="hidden"
+          animate={controls}
+          variants={curtainVariants}
+        ></motion.div>
+        <img src="./home/so1.png" alt="Standout" className="w-full" />
+      </div>
+      <div className="w-[50%] relative overflow-hidden">
+        <motion.div
+          className="absolute top-0 left-0 h-full bg-white z-10"
+          ref={ref}
+          initial="hidden"
+          animate={controls}
+          variants={curtainVariants}
+        ></motion.div>
+        <img src="./home/so2.png" alt="Standout" className="w-full" />
+      </div>
+    </motion.div>
 
       <motion.div
-        className="md:w-[40%] md:ml-[4%] m flex flex-col justify-evenly"
+        className="md:w-[40%] md:ml-[4%] flex flex-col justify-center"
         variants={containerVariants}
       >
-        <motion.h1
-          className="viaoda md:text-4xl text-3xl my-5 md:text-left text-center md:mb-6"
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: false }} // Allow the animation to repeat as the card comes into view
-          transition={{
-              duration: 0.5, // Increased duration for smoother transitions
-              ease: 'linear', // Use easeOut for smoother deceleration
-          }}
-        >
-          WHY WE STAND OUT?
-        </motion.h1>
-
+        <Heading title="WHY WE STAND OUT?" color="black"/>
+        
         {[
           {
             img: "./home/s1.svg",
@@ -73,11 +105,13 @@ const Standout = () => {
         ].map(({ img, text }, index) => (
           <motion.div
             key={index}
-            className="flex w-full items-center py-4 md:border-0 border-b border-gray-400"
+            className="relative flex w-full items-center  border-l border-black py-6 "
             variants={childVariants}
           >
-            <img src={img} className="mr-5" alt="" />
-            <p>{text}</p>
+            <span className="absolute -left-[5px] w-[10px] h-[10px] bg-[#1f4f94] rounded-full "></span>
+            {/* <img src={img} className="mr-5" alt="" /> */}
+
+            <p className="ml-6">{text}</p>
           </motion.div>
         ))}
       </motion.div>

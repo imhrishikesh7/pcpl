@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { Link } from "react-router-dom";
 const Navbar = () => {
     const [showInfoBar, setShowInfoBar] = useState(true);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -73,11 +73,11 @@ const Navbar = () => {
 
                         {/* Menus */}
                         <ul className="menu hidden md:flex space-x-8 text-[14px] font-medium">
-                            <li className="cursor-pointer">HOME</li>
+                            <li className="cursor-pointer"><Link to="/">HOME</Link></li>
+                            <li className="cursor-pointer"><Link to="/aboutus">COMPANY</Link></li>
                             <li className="cursor-pointer">LIVING SPACES</li>
-                            <li className="cursor-pointer">COMPANY</li>
                             <li className="cursor-pointer">INVESTOR</li>
-                            <li className="cursor-pointer">MEDIA SECTION</li>
+                            {/* <li className="cursor-pointer">MEDIA SECTION</li> */}
                             <li className="cursor-pointer">CAREERS</li>
                             <li className="cursor-pointer">CONTACT US</li>
                         </ul>
@@ -91,9 +91,9 @@ const Navbar = () => {
                                 <i className="fas fa-user"></i>
                             </button>
                             <button className="relative bg-white text-[12px] text-black px-6 py-2 hover:bg-transparent hover:text-white transition-colors duration-300">
-    Schedule a Visit
-    <span className="glare-effect"></span>
-</button>
+                                Schedule a Visit
+                                <span className="glare-effect"></span>
+                            </button>
 
 
 

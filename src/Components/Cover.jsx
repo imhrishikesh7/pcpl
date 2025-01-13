@@ -80,12 +80,13 @@ const Cover = () => {
       <h1 className='viaoda md:text-6xl text-4xl md:mb-6 ml12-1'>THE KEY TO YOUR</h1>
       <h1 className='viaoda md:text-6xl text-4xl mb-6 ml12-2'>DREAM  HOUSE</h1>
       <motion.p
+      className="text-justify"
   initial={{ opacity: 0 }}
   animate={{ opacity: 1 }}
   transition={{ duration: 2, delay: 1.2 }}
 >
       Imagine a place where every detail is tailored to your unique taste and style, a sanctuary where memories are made and moments are cherished. From sleek modern architecture to cozy traditional charm, our diverse portfolio has something for everyone. We prioritise customer expectations in all projects. We go beyond reconstruction to build long-term client connections and ensure their satisfaction throughout.
-      <br />Your dream home awaits!
+      Your dream home awaits!
       </motion.p>
       {/* Add your navbar items here */}
     </div>

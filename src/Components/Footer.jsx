@@ -1,4 +1,5 @@
 import React from "react";
+import ContactForm from "./ContactForm";
 
 const Footer = () => {
     return (
@@ -22,7 +23,10 @@ const Footer = () => {
       }}
     />
             {/* Footer Content */}
-            <div className="relative w-full text-white bg-gradient-to-t from-black via-black/50 to-transparent flex flex-col items-baseline justify-end py-12 min-h-screen">
+            <div className="relative w-full text-white bg-gradient-to-t from-black via-black/70 to-transparent flex flex-col items-baseline justify-end py-12 min-h-screen">
+          <div className="absolute top-0 w-[100%] hidden md:block">
+          <ContactForm /> 
+          </div>
                 <div className="container mx-auto px-6 md:flex flex-wrap justify-between gap-8">
                     {/* About Section */}
                     <div className="flex-1 mb-6 md:mb-0 md:mr-8 m-auto">
@@ -39,11 +43,11 @@ const Footer = () => {
                     <div className="flex- mb-6 md:mb-0 md:mr-8 m-auto">
                         <h3 className="text-2xl font-semibold mb-4 viaoda">Explore</h3>
                         <ul className="space-y-2 text-[12px] sarala text-gray-400">
-                            <li><a href="#" className="hover:text-white duration-300">About</a></li>
-                            <li><a href="#" className="hover:text-white duration-300">Contact</a></li>
-                            <li><a href="#" className="hover:text-white duration-300">The Building</a></li>
-                            <li><a href="#" className="hover:text-white duration-300">Our Agents</a></li>
-                            <li><a href="#" className="hover:text-white duration-300">Apartment</a></li>
+                            <li><a href="#" className="hover:text-white duration-300">Company</a></li>
+                            <li><a href="#" className="hover:text-white duration-300">Living Spaces</a></li>
+                            <li><a href="#" className="hover:text-white duration-300">Investors</a></li>
+                            <li><a href="#" className="hover:text-white duration-300">Careers</a></li>
+                            <li><a href="#" className="hover:text-white duration-300">Contact US</a></li>
                         </ul>
                     </div>
 
@@ -76,7 +80,7 @@ const Footer = () => {
                                 placeholder="Email Address"
                                 className="flex-1 p-3 bg-gray-700 text-white text-center text-[12px] sarala placeholder-gray-400 focus:outline-none"
                             />
-                            <button className="bg-[#004b8b] text-white text-[12px] sarala py-3 hover:bg-[#0165BA] duration-300">
+                            <button className=" text-white text-[12px] sarala py-3 bg-[#004b8b] hover:bg-[#0165BA] duration-300">
                                 Subscribe
                             </button>
                         </div>

@@ -70,15 +70,15 @@ const Network = () => {
   };
 
   return (
-    <div className="marginal">
+    <div className="marginal ">
       <motion.h1 className="viaoda md:text-4xl text-3xl my-5 text-center md:mb-6"
-       initial={{ opacity: 0, scale: 0.8 }}
-       whileInView={{ opacity: 1, scale: 1 }}
-       viewport={{ once: false }} // Allow the animation to repeat as the card comes into view
-       transition={{
-           duration: 0.5, // Increased duration for smoother transitions
-           ease: 'linear', // Use easeOut for smoother deceleration
-       }}
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: false }} // Allow the animation to repeat as the card comes into view
+        transition={{
+          duration: 0.5, // Increased duration for smoother transitions
+          ease: 'linear', // Use easeOut for smoother deceleration
+        }}
       >OUR NETWORK</motion.h1>
       <div className="md:flex justify-between items-center md:h-[70v] w-full">
         {/* Category Buttons */}
@@ -87,8 +87,8 @@ const Network = () => {
             <button
               key={category}
               className={`block my-2 py-3 text-xl sarala text-center px-4 ${selectedCategory === category
-                  ? "bg-[#005496] text-white"
-                  : "border-2 border-[#827E78] text-[#827E78]"
+                ? "bg-[#005496] text-white"
+                : "border-2 border-[#827E78] text-[#827E78]"
                 }`}
               onClick={() => {
                 setSelectedCategory(category);
@@ -102,31 +102,31 @@ const Network = () => {
 
         {/* Image Box */}
         <div className="image-box mb-6 md:w-[21%] flex flex-col items-start justify-center">
-  {activeLocation ? (
-    data[selectedCategory].find((loc) => loc.location === activeLocation)?.img &&
-    data[selectedCategory].find((loc) => loc.location === activeLocation)?.img !== "." ? (
-      <motion.div
-        className="w-full md:h-[200px] flex items-center justify-center"
-        key={activeLocation}
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
-      >
-        <motion.img
-          src={data[selectedCategory].find((loc) => loc.location === activeLocation)?.img}
-          alt="Selected Location"
-          className="fade-in bg-white object-contain shadow-[8px_0_15px_rgba(0,0,0,0.2)] max-h-full max-w-full"
-        />
-      </motion.div>
-    ) : (
-      <p className="text-center viaoda text-xl font-semibold text-gray-500">Site Under Construction</p>
-    )
-  ) : (
-    <p className="text-center text-gray-500">Select a location</p>
-  )}
-  <a className="py-3 px-6 mt-4 bg-[#005496] text-white" href="/">GET DETAILS</a>
-</div>
+          {activeLocation ? (
+            data[selectedCategory].find((loc) => loc.location === activeLocation)?.img &&
+              data[selectedCategory].find((loc) => loc.location === activeLocation)?.img !== "." ? (
+              <motion.div
+                className="w-full md:h-[200px] flex items-center justify-center"
+                key={activeLocation}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+              >
+                <motion.img
+                  src={data[selectedCategory].find((loc) => loc.location === activeLocation)?.img}
+                  alt="Selected Location"
+                  className="fade-in bg-white object-contain shadow-[8px_0_15px_rgba(0,0,0,0.2)] max-h-full max-w-full"
+                />
+              </motion.div>
+            ) : (
+              <p className="text-center viaoda text-xl font-semibold text-gray-500">Site Under Construction</p>
+            )
+          ) : (
+            <p className="text-center text-gray-500">Select a location</p>
+          )}
+          <a className="py-3 px-6 mt-4 bg-[#005496] text-white" href="/">GET DETAILS</a>
+        </div>
 
 
 
@@ -137,7 +137,7 @@ const Network = () => {
             className="absolut top-0 left-0 w-full object-cover"
             alt="Network Map"
           />
-          
+
 
           {/* All Pointers */}
           {selectedCategory &&
@@ -145,8 +145,8 @@ const Network = () => {
               <div
                 key={`${selectedCategory}-${index}`}
                 className={`loader transition-all duration-300 ease-in-out ${activeLocation === location.location
-                    ? "scale-110 opacity-100"
-                    : "scale-100 opacity-50"
+                  ? "scale-110 opacity-100"
+                  : "scale-100 opacity-50"
                   }`}
                 style={{
                   top: location.position.top,

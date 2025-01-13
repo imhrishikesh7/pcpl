@@ -1,114 +1,110 @@
-import React from "react";
-import { useInView } from "react-intersection-observer";
-import { motion } from "framer-motion";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { useState } from 'react';
+import { snapshotsData } from '../data/data'; // Import your data
+import { motion } from 'framer-motion';
+import Heading from './Heading';
+
 const Snapshots = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const cards = [
-    { id: 1, icon: "./home/c1.svg", value: "10+", text: "Years of\nexperience" },
-    { id: 2, icon: "./home/c2.svg", value: "25", text: "Completed\nRedevelopment Projects" },
-    { id: 3, icon: "./home/c3.svg", value: "11", text: "Under-construction\nRedevelopment Projects" },
-    { id: 4, icon: "./home/c4.svg", value: "21", text: "Upcoming\nRedevelopment Projects " },
-    { id: 5, icon: "./home/c5.svg", value: "10+", text: "Lakh sq. ft.\ndeveloped" },
-    { id: 6, icon: "./home/c6.svg", value: "12+", text: "Lakh sq. ft. under\nconstruction" },
-    { id: 7, icon: "./home/c7.svg", value: "15+", text: "lakh sq. ft. in\npipeline" },
-    { id: 8, icon: "./home/c8.svg", value: "1970+", text: "Happy families\nserved" },
-  ];
+  // Determine how many items to show based on screen size
+  const itemsPerPage = window.innerWidth < 640 ? 1 : 4;
 
-  const Counter = ({ value }) => {
-    const { ref, inView } = useInView({ triggerOnce: true });
-    const [count, setCount] = React.useState(0);
-    const numericValue = parseInt(value, 10);
-    const suffix = value.replace(/[\d]/g, "");
+  // Get the next items to display based on itemsPerPage
+  const currentItems = snapshotsData.slice(currentIndex, currentIndex + itemsPerPage);
 
-    React.useEffect(() => {
-      if (inView && numericValue) {
-        let start = 0;
-        const duration = 1500;
-        const increment = numericValue / (duration / 10);
+  // Function to go to the next page
+  const nextPage = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + itemsPerPage) % snapshotsData.length);
+  };
 
-        const counter = setInterval(() => {
-          start += increment;
-          if (start >= numericValue) {
-            setCount(numericValue);
-            clearInterval(counter);
-          } else {
-            setCount(Math.ceil(start));
-          }
-        }, 10);
-      }
-    }, [inView, numericValue]);
-
-    return (
-      <motion.h1
-        ref={ref}
-        className="text-4xl mb-2 text-[#004b8b]"
-        key={count} // Key ensures re-animation on value change
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.8, opacity: 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-      >
-        {count}
-        {suffix}
-      </motion.h1>
+  // Function to go to the previous page
+  const prevPage = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - itemsPerPage + snapshotsData.length) % snapshotsData.length
     );
   };
 
-  const NextArrow = ({ onClick }) => (
-    <div className="custom-arrow custom-next" onClick={onClick}>
-      <span className="arrow-right"></span>
-    </div>
-  );
-
-  const PrevArrow = ({ onClick }) => (
-    <div className="custom-arrow custom-prev" onClick={onClick}>
-      <span className="arrow-left"></span>
-    </div>
-  );
-
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 3 } },
-      { breakpoint: 768, settings: { slidesToShow: 2 } },
-      { breakpoint: 480, settings: { slidesToShow: 1 } },
-    ],
-  };
-
   return (
-    <div className="marginal">
-      <motion.h1 className="viaoda md:text-4xl text-3xl my-5 text-center md:mb-6"
-       initial={{ opacity: 0, scale: 0.8 }}
-       whileInView={{ opacity: 1, scale: 1 }}
-       viewport={{ once: false }} // Allow the animation to repeat as the card comes into view
-       transition={{
-           duration: 0.5, // Increased duration for smoother transitions
-           ease: 'linear', // Use easeOut for smoother deceleration
-       }}
-      >SNAPSHOT</motion.h1>
-      <Slider {...settings}>
-        {cards.map((card) => (
-          <div
-            key={card.id}
-            className="p-6 mb-12 bg-white text-center flex flex-col items-center justify-center"
-          >
-            <div className="text-4xl mb-2 w-[70px] h-[70px] m-auto text-blue-500">
-              <img src={card.icon} alt="" />
-            </div>
-            <Counter value={card.value} />
-            <div className="text-base text-gray-500 whitespace-pre-line">{card.text}</div>
-          </div>
-        ))}
-      </Slider>
+    <div className="relative pt-14 pb-24 px-4 bg-gray-900 text-white overflow-hidden">
+      <div className='text-center mb-8'>
+      <Heading title="SNAPSHOT"/>
+      </div>
+      <motion.div
+        className="flex justify-center gap-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="flex justify-center gap-10">
+          {currentItems.map((item, index) => (
+            <motion.div
+              key={item.id}
+              className="snapshot-card flex flex-col items-center justify-center p-8 bg-gray-800 shadow-2xl rounded-xl overflow-hidden"
+              style={{ minWidth: '250px', maxWidth: '300px' }}
+              initial={{ opacity: 0, x: '100%' }} // Start from the right off-screen
+              animate={{
+                opacity: 1,
+                x: 0, // Slide in to the original position
+                transition: {
+                  delay: index * 0.1, // Stagger entry
+                  duration: 0.6, // Smooth but quick animation duration
+                  ease: 'easeOut',
+                },
+              }}
+              exit={{
+                opacity: 0,
+                x: '-100%', // Slide out to the left off-screen
+                transition: {
+                  duration: 0.5, // Fast exit for smoothness
+                  ease: 'easeIn',
+                },
+              }}
+              whileHover={{
+                scale: 1.05,
+                rotateY: 10,
+                transition: { duration: 0.3, ease: 'easeInOut' },
+              }}
+            >
+              <motion.h3
+                className="text-6xl font-bold text-center text-[#CBA864] viaoda" // Increased size of the number
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: 1,
+                  transition: { delay: 0.2, duration: 0.4, ease: 'easeOut' },
+                }}
+              >
+                {item.value}
+              </motion.h3>
+              <motion.p
+                className="text-center text-lg text-gray-400 mt-4" // Increased text size for better visibility
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: 1,
+                  transition: { delay: 0.3, duration: 0.4, ease: 'easeOut' },
+                }}
+              >
+                {item.text}
+              </motion.p>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Navigation Arrows */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-4">
+        <button
+          onClick={prevPage}
+          className="flex items-center justify-center bg-gray-700 text-gray-300 rounded-full shadow-lg hover:bg-gray-600 duration-300"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-chevron-left"><circle cx="12" cy="12" r="10"/><path d="m14 16-4-4 4-4"/></svg>
+        </button>
+        <button
+          onClick={nextPage}
+          className="flex items-center justify-center bg-gray-700 text-gray-300 rounded-full shadow-lg hover:bg-gray-600 duration-300"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-chevron-right"><circle cx="12" cy="12" r="10"/><path d="m10 8 4 4-4 4"/></svg>
+        </button>
+      </div>
     </div>
   );
 };
