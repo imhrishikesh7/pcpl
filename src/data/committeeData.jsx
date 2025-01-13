@@ -7,10 +7,16 @@ export const committeeData = [
         termsOfReference: (
             <>
                 <p>
-                    The Audit Committee is responsible for overseeing the financial reporting process, ensuring the integrity of financial statements, and maintaining internal controls.
+                The scope and function of the Audit Committee is in accordance with Section 177 of the Companies Act, 2013 and
+                Regulation 18 of the SEBI Listing Regulations. Its terms of reference are as follows:
                 </p>
                 <ul>
-                    <li>Ensure the accuracy of financial records.</li>
+                    <li>The Audit Committee shall have powers, which should include the following:</li>
+                    <ul>
+                        <li>The Audit Committee shall have powers, which should include the following:</li>
+
+                    </ul>
+
                     <li>Review the effectiveness of internal controls.</li>
                     <li>Monitor the company's compliance with legal and regulatory requirements.</li>
                 </ul>

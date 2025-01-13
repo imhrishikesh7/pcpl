@@ -28,10 +28,7 @@ const TermsOfRef = () => {
                 <div className="text-lg text-gray-700">
                     {committee.termsOfReference}
 
-                    <div className="mt-6">
-                        <h3 className="text-xl font-semibold text-gray-800">Additional Information</h3>
-                        <p className="text-gray-600">For further details on the committee’s activities, please contact the committee's secretary.</p>
-                    </div>
+                    
                 </div>
             </div>
 
