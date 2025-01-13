@@ -23,7 +23,7 @@ const Footer = () => {
                 }}
             />
             {/* Footer Content */}
-            <div className="relative w-full h-full text-white bg-gradient-to-t from-black via-black/70 to-transparent flex flex-col items-baseline justify-end py-12 min-h-screen">
+            <div className="relative w-full h-full text-white bg-gradient-to-t from-black via-black/70 to-transparent flex flex-col items-baseline justify-end pt-24 pb-4 min-h-screen">
                 <div className="absolute top-[5vh] w-[100%] hidden md:block">
                     <ContactForm />
                 </div>

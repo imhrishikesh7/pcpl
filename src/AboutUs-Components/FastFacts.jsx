@@ -50,15 +50,15 @@ const FastFacts = () => {
             content: "No. of Redevelopment Projects",
         },
         {
-            title: "25",
+            title: "26",
             content: "No. of Completed Redevelopment Projects",
         },
         {
-            title: "11",
+            title: "10",
             content: "No. of Under-construction Redevelopment Projects",
         },
         {
-            title: "21",
+            title: "20",
             content: "No. of Upcoming Redevelopment Projects",
         },
         {
@@ -66,15 +66,15 @@ const FastFacts = () => {
             content: "Years of Experience in Redevelopment Projects",
         },
         {
-            title: "10+",
+            title: "12+",
             content: "Lakh sq. ft. Total Developed Area",
         },
         {
-            title: "12+",
+            title: "10+",
             content: "Lakh sq. ft. Total Under-construction Area",
         },
         {
-            title: "15+",
+            title: "17+",
             content: "Lakh sq. ft. Total Developable Area in Pipeline",
         },
         {
