@@ -54,7 +54,7 @@ const GlobalCover = ({ src, title, subtitle }) => {
           top: 0,
           left: 0,
           width: "100%",
-          // filter: "brightness(0.5)",
+          filter: "brightness(0.5)",
           height: "100%", // Ensures proper coverage
           objectFit: "cover",
           zIndex: -1,
@@ -69,7 +69,6 @@ const GlobalCover = ({ src, title, subtitle }) => {
           left: 0,
           width: "100%",
           height: overlayHeight,
-          background: "rgba(0, 0, 0, 0.5)", // Slight dark overlay
           zIndex: -1,
         }}
       ></div>

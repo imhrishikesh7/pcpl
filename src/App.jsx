@@ -24,7 +24,7 @@ function App() {
           <Route path="/board-committees" element={<BoardCommittees />} />
           <Route path="/terms-of-reference/:committeeKey" element={<TermsOfRef />} />
         </Routes>
-        <div className="md:hidden">
+        <div className="md:hidden my-10%">
           <ContactForm />
         </div>
         <Footer />

@@ -1,9 +1,9 @@
 const ContactForm = () => {
     return (
-      <div className="relative md:w-[90%] max-w-[600px] mx-auto mt-32 md:mt-12 p-6 md:rounded-lg shadow-lg">
+      <div className="relative md:w-[90%] max-w-[600px] mx-auto mt-32 md:mt-0 p-6 md:rounded-lg shadow-lg">
         {/* Background overlay for readability */}
         <div
-          className="absolute inset-0 md:rounded-lg lg:backdrop-blur-lg lg:bg-black/50 bg-black"
+          className="absolute inset-0  lg:backdrop-blur-lg lg:bg-black/50 bg-black"
           style={{
             zIndex: -1, // Only zIndex is kept in style to ensure proper layering
           }}

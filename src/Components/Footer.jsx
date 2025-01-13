@@ -3,33 +3,33 @@ import ContactForm from "./ContactForm";
 
 const Footer = () => {
     return (
-        <footer className="relative w-full  min-h-[70vh] overflow-hidden">
+        <footer className="relative w-full  h-[110vh] overflow-hidden">
             {/* Video Background */}
             {/* <img src="./home/fbg.png" alt="" className="absolute top-0 left-0 w-full h-full object-cover" /> */}
             <video
-      src="./home/footer.webm"
-      autoPlay
-      loop
-      muted
-      playsInline
-      style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        objectFit: 'cover',
-        zIndex: -1,
-      }}
-    />
+                src="./home/footer.webm"
+                autoPlay
+                loop
+                muted
+                playsInline
+                style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    zIndex: -1,
+                }}
+            />
             {/* Footer Content */}
-            <div className="relative w-full text-white bg-gradient-to-t from-black via-black/70 to-transparent flex flex-col items-baseline justify-end py-12 min-h-screen">
-          <div className="absolute top-0 w-[100%] hidden md:block">
-          <ContactForm /> 
-          </div>
+            <div className="relative w-full h-full text-white bg-gradient-to-t from-black via-black/70 to-transparent flex flex-col items-baseline justify-end py-12 min-h-screen">
+                <div className="absolute top-[5vh] w-[100%] hidden md:block">
+                    <ContactForm />
+                </div>
                 <div className="container mx-auto px-6 md:flex flex-wrap justify-between gap-8">
                     {/* About Section */}
-                    <div className="flex-1 mb-6 md:mb-0 md:mr-8 m-auto">
+                    <div className="flex-1 m-6 md:mb-0 md:mr-8 mx-auto">
                         {/* <h1 className="text-3xl font-semibold mb-4">PCPL</h1> */}
                         <a href="/" className="text-2xl font-bold md:w-[150px] w-[120px] mb-4 block"><img src="./home/logo-pcpl.png" className="w-full" alt="" /></a>
                         <p className="text-[12px] sarala leading-relaxed">
