@@ -8,11 +8,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import PeopleDetails from './Pages/PeopleDetails'
 import BoardCommittees from './Pages/BoardCommittees'
 import TermsOfRef from './Pages/TermsOfRef'
+import ScrollToTop from './Components/ScrollToTop'; // Import ScrollToTop
 
 function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop /> {/* Ensures the page scrolls to the top on route change */}
       <div>
         <Navbar />
         <Routes>
@@ -20,15 +22,15 @@ function App() {
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/details/:id" element={<PeopleDetails />} />
           <Route path="/board-committees" element={<BoardCommittees />} />
-          <Route path="/terms-of-reference/:committeeKey" element={<TermsOfRef/>} />
+          <Route path="/terms-of-reference/:committeeKey" element={<TermsOfRef />} />
         </Routes>
-          <div className="md:hidden">
-            <ContactForm/>
-          </div>
-            <Footer />
+        <div className="md:hidden">
+          <ContactForm />
         </div>
-    </BrowserRouter >
+        <Footer />
+      </div>
+    </BrowserRouter>
   )
 }
 
-export default App
+export default App;
