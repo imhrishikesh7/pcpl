@@ -31,7 +31,7 @@ const Footer = () => {
                     {/* About Section */}
                     <div className="flex-1 mb-6 md:mb-0 md:mr-8 m-auto">
                         {/* <h1 className="text-3xl font-semibold mb-4">PCPL</h1> */}
-                        <a href="/" className="text-2xl font-bold md:w-[150px] w-[120px] mb-4 block"><img src="./public/home/logo-pcpl.png" className="w-full" alt="" /></a>
+                        <a href="/" className="text-2xl font-bold md:w-[150px] w-[120px] mb-4 block"><img src="./home/logo-pcpl.png" className="w-full" alt="" /></a>
                         <p className="text-[12px] sarala leading-relaxed">
                             Pranav Constructions Limited is a Mumbai-based redevelopment company
                             with a decade-long reputation for building high-quality homes on

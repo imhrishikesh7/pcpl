@@ -69,7 +69,7 @@ const Navbar = () => {
                 <nav className={`bg-${bgColor} text-white py-6`}>
                     <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
                         {/* Logo */}
-                        <a href="/" className="text-2xl font-bold md:w-[100px] w-[80px]"><img src="./public/home/logo-pcpl.png" alt="" /></a>
+                        <a href="/" className="text-2xl font-bold md:w-[100px] w-[80px]"><img src="./home/logo-pcpl.png" alt="" /></a>
 
                         {/* Menus */}
                         <ul className="menu hidden md:flex space-x-8 text-[14px] font-medium">
