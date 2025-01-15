@@ -2,12 +2,12 @@
 export const snapshotsData = [
     { id: 1, icon: "./home/c1.svg", value: "10+", text: "Years of\nexperience" },
     { id: 2, icon: "./home/c2.svg", value: "26", text: "Completed\nRedevelopment Projects" },
-    { id: 3, icon: "./home/c3.svg", value: "10", text: "Under-construction\nRedevelopment Projects" },
-    { id: 4, icon: "./home/c4.svg", value: "20", text: "Upcoming\nRedevelopment Projects" },
+    { id: 3, icon: "./home/c3.svg", value: "11", text: "Under-construction\nRedevelopment Projects" },
+    { id: 4, icon: "./home/c4.svg", value: "21", text: "Upcoming\nRedevelopment Projects" },
     { id: 5, icon: "./home/c5.svg", value: "12+", text: "Lakh sq. ft.\ndeveloped" },
     { id: 6, icon: "./home/c6.svg", value: "10+", text: "Lakh sq. ft. under\nconstruction" },
-    { id: 7, icon: "./home/c7.svg", value: "17+", text: "lakh sq. ft. in\npipeline" },
-    { id: 8, icon: "./home/c8.svg", value: "1970+", text: "Happy families\nserved" },
+    { id: 7, icon: "./home/c7.svg", value: "18+", text: "lakh sq. ft. in\npipeline" },
+    { id: 8, icon: "./home/c8.svg", value: "1990+", text: "Happy families\nserved" },
   ];
 // AWARD DATA ****************************
 export const awardData = [

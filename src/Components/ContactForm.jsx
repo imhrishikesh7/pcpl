@@ -11,9 +11,9 @@ const ContactForm = () => {
   
         {/* Form Content */}
         <div className="text-center mb-4">
-          <h2 className="text-xs mb-2 tracking-widest uppercase text-gray-300">
+          {/* <h2 className="text-xs mb-2 tracking-widest uppercase text-gray-300">
             Contact With Me
-          </h2>
+          </h2> */}
           <h1 className="text-2xl font-bold viaoda text-white">WRITE TO US</h1>
         </div>
         <form className="space-y-4">

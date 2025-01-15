@@ -70,7 +70,7 @@ const Portfolio = () => {
                                         transition: 'clip-path 1s ease-in-out', 
                                     }}
                                 />
-                                <div className='w-full h-[22%] flex items-center justify-between mb-4'>
+                                <div className='w-full h-[18%] flex items-center justify-between mb-4'>
                                     <div className='w-[70%] h-full flex items-center p-4 bg-[#004B8B]/50 backdrop-blur-md'>
                                         <h4 className='viaoda text-white text-[22px] leading-[30px] whitespace-pre-line'>{card.title}</h4>
                                     </div>

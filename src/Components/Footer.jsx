@@ -3,7 +3,7 @@ import ContactForm from "./ContactForm";
 
 const Footer = () => {
     return (
-        <footer className="relative w-full  h-[110vh] overflow-hidden">
+        <footer className="relative w-full  h-[120vh] overflow-hidden">
             {/* Video Background */}
             {/* <img src="./home/fbg.png" alt="" className="absolute top-0 left-0 w-full h-full object-cover" /> */}
             <video
@@ -56,7 +56,7 @@ const Footer = () => {
                         <h3 className="text-2xl font-semibold mb-4 viaoda">Contact</h3>
                         <p className="text-[12px] sarala mb-2 text-gray-400">
                             1001, DHL Park, 10th Floor, SV Road, Opp. Goregaon MTNL, Goregaon West,
-                            Mumbai - 400062, Maharashtra, India.
+                            Mumbai - 4000104, Maharashtra, India.
                         </p>
                         <p className="text-[12px] sarala mb-2">
                             <a href="mailto:contact@pranavconstructions.com" className="hover:text-gray-400 duration-300">
