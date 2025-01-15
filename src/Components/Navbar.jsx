@@ -78,7 +78,7 @@ const Navbar = () => {
                             <li className="cursor-pointer">LIVING SPACES</li>
                             <li className="cursor-pointer">INVESTOR</li>
                             {/* <li className="cursor-pointer">MEDIA SECTION</li> */}
-                            <li className="cursor-pointer">CAREERS</li>
+                            <li className="cursor-pointer"><Link to="/careers">CAREERS</Link></li>
                             <li className="cursor-pointer">CONTACT US</li>
                         </ul>
 

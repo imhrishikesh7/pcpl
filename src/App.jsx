@@ -9,6 +9,7 @@ import PeopleDetails from './Pages/PeopleDetails'
 import BoardCommittees from './Pages/BoardCommittees'
 import TermsOfRef from './Pages/TermsOfRef'
 import ScrollToTop from './Components/ScrollToTop'; // Import ScrollToTop
+import Careers from './Pages/Careers'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/details/:id" element={<PeopleDetails />} />
           <Route path="/board-committees" element={<BoardCommittees />} />
           <Route path="/terms-of-reference/:committeeKey" element={<TermsOfRef />} />
+          <Route path="/careers" element={<Careers />} />
         </Routes>
         <div className="md:hidden my-10%">
           <ContactForm />
