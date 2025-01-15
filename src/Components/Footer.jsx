@@ -65,7 +65,7 @@ const Footer = () => {
                         </p>
                         <p className="text-[12px] sarala">
                             <a href="tel:+912262569999" className="hover:text-gray-400 duration-300">
-                                +91 22 6256 9999
+                                +91 22 6276 9999
                             </a>
                         </p>
                     </div>
