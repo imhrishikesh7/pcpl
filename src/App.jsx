@@ -10,6 +10,7 @@ import BoardCommittees from './Pages/BoardCommittees'
 import TermsOfRef from './Pages/TermsOfRef'
 import ScrollToTop from './Components/ScrollToTop'; // Import ScrollToTop
 import Careers from './Pages/Careers'
+import ContactUs from './Pages/ContactUs'
 
 function App() {
 
@@ -22,9 +23,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/details/:id" element={<PeopleDetails />} />
-          <Route path="/board-committees" element={<BoardCommittees />} />
+          <Route path="/committees" element={<BoardCommittees />} />
           <Route path="/terms-of-reference/:committeeKey" element={<TermsOfRef />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/contactus" element={<ContactUs />} />
         </Routes>
         <div className="md:hidden my-10%">
           <ContactForm />

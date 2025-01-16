@@ -34,7 +34,7 @@ const People = () => {
     };
 
     const handleThirdButtonClick = () => {
-        navigate("/board-committees"); // Redirect to the desired page
+        navigate("/committees"); // Redirect to the desired page
     };
 
     return (

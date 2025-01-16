@@ -48,7 +48,7 @@ const Timeline = () => {
         {
             date: "2024",
             img: "./about/t7.png",
-            description: ["Our portfolio reached 18,60,940 sq. ft. of developable area across 33 redevelopment projects, comprising 1,669 units.", "Achieved over 95% pre-sales of the inventory for the Shining Star CHSL redevelopment project within six months of its the launch."],
+            description: ["Our portfolio reached 23,40,815 sq.ft. of developable area across 37 redevelopment projects, comprising 1,998 units.", "Achieved over 95% pre-sales of the inventory for the Shining Star CHSL redevelopment project within six months of its the launch."],
         },
     ];
 

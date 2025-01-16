@@ -35,7 +35,7 @@ const Messages = () => {
                             <p className='mb-6 text-[14px]'>
                                 As Kiran Bhai finds peace in heavenly realms, his visionary spirit stands as an everlasting inspiration, guiding PCPL on its journey toward continued excellence.
                             </p>
-                            <p className='font-bold'>Mr. Kiran Dharamsey Ashar  </p>
+                            <p className='font-bold'>Late. Kiran Dharamsey Ashar, Founder</p>
                         </div>
                     </div>
                 </div>
@@ -44,26 +44,40 @@ const Messages = () => {
             <div className='py-10'>
 
                 <div className='px-[7%]'>
-                    
+
                     <div className='md:flex justify-between items-end gap-6'>
-                        
+
                         <div className='md:w-[70%] text-justify'>
-                        <motion.h1
-                        className="viaoda md:text-4xl text-3xl md:text-left text-center mb-6"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: false }} // Allow the animation to repeat as the card comes into view
-                        transition={{
-                            duration: 0.5, // Increased duration for smoother transitions
-                            ease: 'linear', // Use easeOut for smoother deceleration
-                        }}
-                    >
-                        CHAIRMAN AND <br /> MANAGING DIRECTOR
-                    </motion.h1>
-                    <p className='text-[#004B8B] font-semibold text-xl mb-4'>Pranav Kiran Ashar</p>
+                            <motion.h1
+                                className="viaoda md:text-4xl text-3xl md:text-left text-center mb-6"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: false }} // Allow the animation to repeat as the card comes into view
+                                transition={{
+                                    duration: 0.5, // Increased duration for smoother transitions
+                                    ease: 'linear', // Use easeOut for smoother deceleration
+                                }}
+                            >
+                                CHAIRMAN AND <br /> MANAGING DIRECTOR
+                            </motion.h1>
+                            <p className='text-[#004B8B] font-semibold text-xl mb-4'>Pranav Kiran Ashar</p>
 
                             <p className='text-[14px]'>
-                            Pranav Kiran Ashar, the Chairman and Managing Director of PCPL, is an accomplished architect from the Indian Education Society’s College of Architecture, University of Mumbai. With over 20 years of diverse experience in the real estate sector, he has established himself as a visionary leader committed to excellence and innovation. Under his leadership, PCPL has embarked on ambitious growth strategies, aiming to position the Company as a leading name in Indian real estate. His expertise spans architectural design, project execution and strategic growth, enabling the Company to set new benchmarks in quality and customer satisfaction. He is dedicated to steering PCPL toward sustainable growth while expanding its footprint in a competitive landscape. His passion for creating modern living spaces, coupled with a strong commitment to integrity and transparency, inspires his team to achieve their best. In recognition of his contributions, he was recognised as the ‘Times 40 Under 40 Leaders’ in 2023 and received the ‘Emerging Builder Young Achiever of the Year’ award. Furthermore, in 2024, he was honoured as an ‘Iconic Redevelopment Developer’ at the Mid-day Maharashtra Gaurav Awards.
+                                Pranav Kiran Ashar, the Chairman and Managing Director of PCPL, is an accomplished
+                                architect. With over 21 years of diverse experience in the real estate sector,
+                                he has established himself as a visionary leader committed to excellence and
+                                innovation. Under his leadership, PCPL has embarked on ambitious growth
+                                strategies, aiming to position the Company as a leading name in Indian real
+                                estate. His expertise spans architectural design, project execution and
+                                strategic growth, enabling the Company to set new benchmarks in quality and
+                                customer satisfaction. He is dedicated to steering PCPL toward sustainable
+                                growth while expanding its footprint in a competitive landscape. His passion
+                                for creating modern living spaces, coupled with a strong commitment to
+                                integrity and transparency, inspires his team to achieve their best. In
+                                recognition of his contributions, he was recognised as the ‘Times 40 Under 40 Leaders’
+                                in 2023 and received the ‘Emerging Builder Young Achiever of the Year’ award.
+                                Furthermore, in 2024, he was honoured as an ‘Iconic Redevelopment Developer’ at
+                                the Mid-day Maharashtra Gaurav Awards.
                             </p>
                         </div>
                         <div className='md:relative md:w-[30%] md:mb-0 mb-6'>

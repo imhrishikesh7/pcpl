@@ -31,8 +31,8 @@ const TermsOfRef = () => {
             </div>
 
             <div className="mt-6">
-                <Link to="/board-committees" className="text-blue-600 hover:underline">
-                    &larr; Back to Board Committees
+                <Link to="/committees" className="text-blue-600 hover:underline">
+                    &larr; Back to Committees
                 </Link>
             </div>
             </div>

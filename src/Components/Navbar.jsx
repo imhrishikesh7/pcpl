@@ -60,8 +60,8 @@ const Navbar = () => {
                 {/* Info Bar */}
                 <div className="bg-gray-800 text-white text-[12px] px-4 py-1">
                     <div className="max-w-7xl mx-auto flex justify-between">
-                        <span>Contact us: +123 456 7890</span>
-                        <span>Email: info@example.com</span>
+                        <span>Contact Us: +91 22 6276 9999</span>
+                        <span>Email: contact@pranavconstructions.com</span>
                     </div>
                 </div>
 
@@ -79,7 +79,7 @@ const Navbar = () => {
                             <li className="cursor-pointer">INVESTOR</li>
                             {/* <li className="cursor-pointer">MEDIA SECTION</li> */}
                             <li className="cursor-pointer"><Link to="/careers">CAREERS</Link></li>
-                            <li className="cursor-pointer">CONTACT US</li>
+                            <li className="cursor-pointer"><Link to="/contactus">CONTACT US</Link></li>
                         </ul>
 
                         {/* Right Side */}

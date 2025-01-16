@@ -58,7 +58,7 @@ const FastFacts = () => {
             content: "No. of Under-construction Redevelopment Projects",
         },
         {
-            title: "20",
+            title: "21",
             content: "No. of Upcoming Redevelopment Projects",
         },
         {

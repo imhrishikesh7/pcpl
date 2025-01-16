@@ -15,7 +15,7 @@ const BoardCommittees = () => {
 
     return (
         <div>
-            <GlobalCover src="/b-committees/com-cover.png" title="BOARD COMMITTEES" />
+            <GlobalCover src="/b-committees/com-cover.png" title="COMMITTEES" />
 
             <div className="bg-[#e6e6e6]">
                 <div className="container mx-auto px-8 py-16 space-y-24">

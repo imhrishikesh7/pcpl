@@ -6,7 +6,17 @@ const GlobalCover = ({ src, title, subtitle }) => {
   const [overlayHeight, setOverlayHeight] = useState("100vh"); // Default height for overlay
 
   useEffect(() => {
-    // Select the text wrapper for animation
+    // Animate the image scale-down effect on page load
+    if (imageRef.current) {
+      anime({
+        targets: imageRef.current,
+        scale: [1.5, 1], // Starts slightly zoomed-in and scales down
+        easing: "easeOutExpo",
+        duration: 2000, // Duration of the animation
+      });
+    }
+
+    // Animate the text
     const heading3 = document.querySelector(".ml12-1");
     if (heading3) {
       heading3.innerHTML = heading3.textContent.replace(
@@ -41,25 +51,35 @@ const GlobalCover = ({ src, title, subtitle }) => {
         position: "relative",
         width: "100%",
         height: "50vh", // Full-screen height for better responsiveness
+        overflow: "hidden", // Ensure the image stays inside the container
       }}
     >
-      {/* Background image */}
-      <img
-        ref={imageRef}
-        src={src}
-        alt="Cover Image"
-        onLoad={updateOverlayHeight} // Ensure height is updated after the image loads
+      {/* Wrapper for the image */}
+      <div
         style={{
           position: "absolute",
           top: 0,
           left: 0,
           width: "100%",
-          filter: "brightness(0.5)",
-          height: "100%", // Ensures proper coverage
-          objectFit: "cover",
-          zIndex: -1,
+          height: "100%",
+          overflow: "hidden", // Prevent scaling image from overflowing
         }}
-      />
+      >
+        {/* Background image */}
+        <img
+          ref={imageRef}
+          src={src}
+          alt="Cover Image"
+          onLoad={updateOverlayHeight} // Ensure height is updated after the image loads
+          style={{
+            width: "100%",
+            height: "100%",
+            filter: "brightness(0.5)",
+            objectFit: "cover",
+            transformOrigin: "center", // Scale from the center
+          }}
+        />
+      </div>
 
       {/* Optional Gradient Overlay for better contrast */}
       <div

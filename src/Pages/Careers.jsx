@@ -7,25 +7,23 @@ import EmpMgt from "../Career-Components/EmpMgt";
 
 const Careers = () => {
 
-    const applyFormRef = useRef(null);
+  const applyFormRef = useRef(null);
 
-    const scrollToForm = () => {
-      if (applyFormRef.current) {
-        applyFormRef.current.scrollIntoView({ behavior: "smooth" });
-      }
-    };
+  const scrollToForm = () => {
+    if (applyFormRef.current) {
+      applyFormRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <div>
-            <GlobalCover src="./careers/careers-cov.png" title="CAREERS"/>
-                <CareerIntro/>
-                <div className='bg-gray-100'>
-                <Jobs onApplyClick={scrollToForm}/>
-                </div>
-                <ApplyForm ref={applyFormRef}/>
-                <EmpMgt/>
-
-        
+      <GlobalCover src="./careers/careers-cov.png" title="CAREERS" />
+      <CareerIntro />
+      <div className='bg-gray-100'>
+        <Jobs onApplyClick={scrollToForm} />
+      </div>
+      <ApplyForm ref={applyFormRef} />
+      <EmpMgt />
     </div>
   )
 }
