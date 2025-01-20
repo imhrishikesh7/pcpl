@@ -76,7 +76,7 @@ const Navbar = () => {
                             <li className="cursor-pointer"><Link to="/">HOME</Link></li>
                             <li className="cursor-pointer"><Link to="/aboutus">COMPANY</Link></li>
                             <li className="cursor-pointer">LIVING SPACES</li>
-                            <li className="cursor-pointer">INVESTOR</li>
+                            <li className="cursor-pointer"><Link to="/investor-corner">INVESTOR</Link></li>
                             {/* <li className="cursor-pointer">MEDIA SECTION</li> */}
                             <li className="cursor-pointer"><Link to="/careers">CAREERS</Link></li>
                             <li className="cursor-pointer"><Link to="/contactus">CONTACT US</Link></li>
@@ -87,9 +87,9 @@ const Navbar = () => {
                             <button className="text-xs hover:text-[#4CA5F1] duration-300">
                                 <i className="fas fa-search"></i>
                             </button>
-                            <button className="text-xs hover:text-[#4CA5F1] duration-300">
+                            {/* <button className="text-xs hover:text-[#4CA5F1] duration-300">
                                 <i className="fas fa-user"></i>
-                            </button>
+                            </button> */}
                             <button className="relative bg-white text-[12px] text-black px-6 py-2 hover:bg-transparent hover:text-white transition-colors duration-300">
                                 Schedule a Visit
                                 <span className="glare-effect"></span>

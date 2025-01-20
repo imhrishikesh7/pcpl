@@ -249,3 +249,54 @@ export const officesData = {
     },
   ],
 };
+
+
+
+// SUSTAINABILITY SLIDER DATA ************************
+export const esgData = {
+  "Water Management": {
+    content: [
+      "We prioritise water conservation throughout the construction process.",
+      "Adhering to green building standards, all projects now have water-efficient plumbing fixtures.",
+      "Rainwater harvesting to ensure responsible water management.",
+      "Native, drought-tolerant plants are selected for landscaping, eliminating water-intensive turf."
+    ],
+    icon: "./esg/esg1.svg"
+  },
+  "Waste Management": {
+    content: [
+      "Scrap Steel and other materials are sold to authorised dealers for recycling.",
+      "Emphasising reusing broken bricks and blocks for waterproofing during construction.",
+      "Educating occupants on practices that can be followed to live a more sustainable life.",
+      "Using vermicomposting to manage wet garbage (food scraps).",
+      "We have also collaborated with e-waste recycling agencies to manage our e-waste."
+    ],
+    icon: "./esg/esg2.svg"
+  },
+  "Energy Efficiency": {
+    content: [
+      "Use of renewable energy sources.",
+      "Use of energy-efficient equipment and appliances to save energy such as LED light fixtures, star-rated A.C. units, etc.",
+      "Buildings designed to maximise the use of daylight and natural ventilation, reducing load on lighting and ventilation/air conditioning."
+    ],
+    icon: "./esg/esg3.svg"
+  },
+  "Material and Resources": {
+    content: [
+      "Recycled, salvaged, and refurbished materials are used for construction to reduce environmental impact caused by extraction of virgin materials.",
+      "Use of local building construction materials minimises the associated environmental impact resulting from transportation of materials.",
+      "Use of low VOC materials and paints with low emissions to reduce adverse health impacts on building occupants."
+    ],
+    icon: "./esg/esg4.svg"
+  },
+  "Occupant Comfort": {
+    content: [
+      "Buildings designed to maximise the use of daylight and natural ventilation to enhance occupant comfort.",
+      "Use of Low VOC Materials and Paints to reduce adverse health impacts on building occupants due to VOCs.",
+      "Adequate ventilation and Exhaust Systems to avoid pollutants affecting indoor air quality.",
+      "Incorporation of universal design, making buildings accessible and welcoming for people of all abilities, including the elderly and those with disabilities."
+    ],
+    icon: "./esg/esg5.svg"
+  }
+};
+

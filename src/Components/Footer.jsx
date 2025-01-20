@@ -1,5 +1,6 @@
 import React from "react";
 import ContactForm from "./ContactForm";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -29,7 +30,7 @@ const Footer = () => {
                 </div>
                 <div className="container mx-auto px-6 md:flex flex-wrap justify-between gap-8">
                     {/* About Section */}
-                    <div className="flex-1 m-6 md:mb-0 md:mr-8 mx-auto">
+                    <div className="flex-1 mb-2 md:h-full md:mb-0 md:mr-8 mx-auto">
                         {/* <h1 className="text-3xl font-semibold mb-4">PCPL</h1> */}
                         <a href="/" className="text-2xl font-bold md:w-[150px] w-[120px] mb-4 block"><img src="./home/logo-pcpl.png" className="w-full" alt="" /></a>
                         <p className="text-[12px] sarala leading-relaxed">
@@ -40,12 +41,13 @@ const Footer = () => {
                     </div>
 
                     {/* Explore Links */}
-                    <div className="flex- mb-6 md:mb-0 md:mr-8 m-auto">
+                    <div className="flex- mb-6 md:mb-0 md:mr-8 mx-auto">
                         <h3 className="text-2xl font-semibold mb-4 viaoda">Explore</h3>
                         <ul className="space-y-2 text-[12px] sarala text-gray-400">
                             <li><a href="#" className="hover:text-white duration-300">Company</a></li>
                             <li><a href="#" className="hover:text-white duration-300">Living Spaces</a></li>
                             <li><a href="#" className="hover:text-white duration-300">Investors</a></li>
+                            <li><Link to="/sustainability" className="hover:text-white duration-300">Sustainability</Link></li>
                             <li><a href="#" className="hover:text-white duration-300">Careers</a></li>
                             <li><a href="#" className="hover:text-white duration-300">Contact US</a></li>
                         </ul>

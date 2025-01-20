@@ -11,6 +11,10 @@ import TermsOfRef from './Pages/TermsOfRef'
 import ScrollToTop from './Components/ScrollToTop'; // Import ScrollToTop
 import Careers from './Pages/Careers'
 import ContactUs from './Pages/ContactUs'
+import Investor from './Pages/Investor'
+import People from './AboutUs-Components/People'
+import Policies from './Pages/Policies'
+import Sustainability from './Pages/Sustainability'
 
 function App() {
 
@@ -25,8 +29,12 @@ function App() {
           <Route path="/details/:id" element={<PeopleDetails />} />
           <Route path="/committees" element={<BoardCommittees />} />
           <Route path="/terms-of-reference/:committeeKey" element={<TermsOfRef />} />
+          <Route path="/investor-corner" element={<Investor />} />
+          <Route path="/policies" element={<Policies />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/sustainability" element={<Sustainability />} />
           <Route path="/contactus" element={<ContactUs />} />
+
         </Routes>
         <div className="md:hidden my-10%">
           <ContactForm />

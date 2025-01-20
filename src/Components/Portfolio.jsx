@@ -31,6 +31,8 @@ const Portfolio = () => {
 
     const settings = {
         dots: false,
+        autoplay: true,
+        autoplaySpeed: 2000,
         infinite: true,
         speed: 800,
         slidesToShow: 2,
