@@ -15,6 +15,11 @@ import Investor from './Pages/Investor'
 import People from './AboutUs-Components/People'
 import Policies from './Pages/Policies'
 import Sustainability from './Pages/Sustainability'
+import OurProperties from './Pages/OurProperties'
+import Completed from './Pages/Completed'
+import Ongoing from './Pages/Ongoing'
+import Upcoming from './Pages/Upcoming'
+import CompletedProjectDetails from './Pages/CompletedProjectDetails'
 
 function App() {
 
@@ -26,6 +31,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/living-spaces" element={<OurProperties />} />
+          <Route path="/completed-projects" element={<Completed />} />
+          <Route path="/ongoing-projects" element={<Ongoing />} />
+          <Route path="/completed-project-details/:projectId" element={<CompletedProjectDetails />} />
+          <Route path="/upcoming-projects" element={<Upcoming />} />
           <Route path="/details/:id" element={<PeopleDetails />} />
           <Route path="/committees" element={<BoardCommittees />} />
           <Route path="/terms-of-reference/:committeeKey" element={<TermsOfRef />} />
@@ -34,7 +44,6 @@ function App() {
           <Route path="/careers" element={<Careers />} />
           <Route path="/sustainability" element={<Sustainability />} />
           <Route path="/contactus" element={<ContactUs />} />
-
         </Routes>
         <div className="md:hidden my-10%">
           <ContactForm />

@@ -75,7 +75,7 @@ const Navbar = () => {
                         <ul className="menu hidden md:flex space-x-8 text-[14px] font-medium">
                             <li className="cursor-pointer"><Link to="/">HOME</Link></li>
                             <li className="cursor-pointer"><Link to="/aboutus">COMPANY</Link></li>
-                            <li className="cursor-pointer">LIVING SPACES</li>
+                            <li className="cursor-pointer"><Link to="/living-spaces">LIVING SPACES</Link></li>
                             <li className="cursor-pointer"><Link to="/investor-corner">INVESTOR</Link></li>
                             {/* <li className="cursor-pointer">MEDIA SECTION</li> */}
                             <li className="cursor-pointer"><Link to="/careers">CAREERS</Link></li>
