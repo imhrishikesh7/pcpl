@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { ongoingProjectsData } from '../data/propertiesData';
 import GlobalCover from '../Components/GlobalCover';
+import { Link } from 'react-router-dom';
 
 const Ongoing = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 6; // Number of cards to show per page
-  const totalCards = ongoingProjectsData["Under-construction Project"].length;
+  const totalCards = ongoingProjectsData["Ongoing Project"].length;
   const totalPages = Math.ceil(totalCards / cardsPerPage);
 
   const startIndex = (currentPage - 1) * cardsPerPage;
-  const currentCards = ongoingProjectsData["Under-construction Project"].slice(
+  const currentCards = ongoingProjectsData["Ongoing Project"].slice(
     startIndex,
     startIndex + cardsPerPage
   );
@@ -44,13 +45,13 @@ const Ongoing = () => {
           {currentCards.map((property, index) => (
             <div
               key={index}
-              className="group relative bg-white shadow-lg rounded-2xl overflow-hidden transition-transform duration-500 hover:scale-105"
+              className="group relative bg-white shadow-lg overflow-hidden transition-transform duration-500 hover:scale-105"
             >
               <div className="relative overflow-hidden">
                 <img
                   src={property.img}
                   alt={property["Underconstruction Project"]}
-                  className="w-full h-64 object-cover rounded-t-2xl transform transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
               <div className="p-6 flex flex-col justify-between space-y-4">
@@ -64,25 +65,16 @@ const Ongoing = () => {
                   <p className="text-sm text-gray-600">
                     <span className="font-semibold text-gray-800">Configuration:</span> {property.Configuration}
                   </p>
-                  <p className="text-sm text-gray-600">
-                    <span className="font-semibold text-gray-800">Price:</span> {property.Price}
-                  </p>
-                  <p className="text-sm text-gray-600">
-                    <span className="font-semibold text-gray-800">Amenities:</span> {property["List of Amenities"]}
-                  </p>
-                  <p className="text-sm text-gray-600">
-                    <span className="font-semibold text-gray-800">RERA Info:</span> {property["RERA Information with QR code"]}
-                  </p>
                 </div>
               </div>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#004B8B] to-[#CBA864]"></div>
               <div className="p-6 pt-4 flex justify-center">
-                <a
-                  href="#"
-                  className="inline-block px-6 py-3 bg-gradient-to-r from-[#004B8B] to-[#CBA864] text-white text-sm font-medium rounded-full shadow-md hover:shadow-lg transition-all duration-500"
+                <Link
+                  to={`/ongoing-project-details/${property["Sr. No."]}`}
+                  className="inline-block px-6 py-3 bg-black text-white text-sm font-medium w-full shadow-md hover:shadow-lg transition-all duration-500"
                 >
                   Explore
-                </a>
+                </Link>
               </div>
             </div>
           ))}

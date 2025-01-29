@@ -1,135 +1,77 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { slidesData } from '../data/propertiesData'; // Import the slides data
-import { Link } from 'react-router-dom';
+import React from "react";
+import { motion } from "framer-motion";
+import { Parallax } from "react-parallax";
+// Assuming you import slidesData like this
+import { slidesData } from "../data/propertiesData";
+import { Link } from "react-router-dom";
+
 const ProSlider = () => {
-    const [activeSlideIndex, setActiveSlideIndex] = useState(0);
-    const slidesLength = slidesData.leftSlides.length; // Total number of slides
-    const sliderContainerRef = useRef(null);
-    const slidesLeftRef = useRef(null);
-    const slidesRightRef = useRef(null);
-
-    useEffect(() => {
-        // Set initial position for left slides
-        if (slidesLeftRef.current) {
-            slidesLeftRef.current.style.top = `-${(slidesLength - 1) * 100}vh`;
-        }
-    }, [slidesLength]);
-
-    const changeSlide = (direction) => {
-        const sliderHeight = sliderContainerRef.current.clientHeight;
-
-        if (direction === 'up') {
-            setActiveSlideIndex((prevIndex) => (prevIndex + 1) % slidesLength);
-        } else if (direction === 'down') {
-            setActiveSlideIndex((prevIndex) => (prevIndex - 1 + slidesLength) % slidesLength);
-        }
-
-        // Update the transform property to change the slide position
-        if (slidesRightRef.current && slidesLeftRef.current) {
-            slidesRightRef.current.style.transform = `translateY(-${activeSlideIndex * sliderHeight}px)`;
-            slidesLeftRef.current.style.transform = `translateY(${activeSlideIndex * sliderHeight}px)`;
-        }
+    const cardVariants = {
+        hidden: { opacity: 0, y: 100 },
+        visible: (i) => ({
+            opacity: 1,
+            y: 0,
+            transition: { delay: i * 0.3, duration: 0.7, type: "spring" },
+        }),
     };
 
-    // Determine if the device is mobile or tablet
-    const isMobileOrTablet = window.innerWidth <= 768;
-
     return (
-        <div className="slider-container" ref={sliderContainerRef}>
-            {isMobileOrTablet ? (
-                // Mobile/Tablet Slider
-                <div className="mobile-slider">
-                    {slidesData.leftSlides.map((slide, index) => (
-                        <div key={index} className="mobile-slide p-4 mb-2 w-[90%] m-auto" style={{ backgroundColor: slide.backgroundColor }}>
-                            <h1 className='text-2xl'>{slide.title}</h1>
-                            <p>{slide.description}</p>
-                            <Link to={slide.link} className="cta my-4"
-                            >
-                                <span className="hover-underline-animation text-blue-400"> Explore </span>
+        <Parallax
+            strength={300}
+            bgImage="./our-properties/parallax-prop.png"
+            bgImageStyle={{
+                objectFit: "cover",
+                objectPosition: "center",
+            }}
+            className="min-h-[80vh] flex flex-col justify-center"
+        >
+            {/* Cards Section */}
+            <motion.div
+                className="flex flex-col md:justify-center justify-evenly items-center gap-6 mx-auto px-6 z-20"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+            >
+                {slidesData.set1.map((card, index) => (
+                    <motion.div
+                        key={index}
+                        custom={index}
+                        variants={cardVariants}
+                        className="p-8 md:w-[50%] bg-gradient-to-r from-[#105058] to-[#004b8b]"
+                    >
+                        {/* <Link 
+  to={card.link} 
+  className="relative w-fit z-10 text-3xl md:text-5xl sarala-bold text-gray-800 font-bold 
+             hover:text-blue-500 transition-all duration-300 ease-in-out"
+>
+  {card.title}
+  <span className="absolute bottom-0 left-0 block w-0 h-[2px] bg-blue-500 transition-all duration-300 ease-in-out hover:w-full"></span>
+</Link> */}
+
+                        <Link to={card.link}
+                            className="pro-cta text-1xl md:text-2xl">
+                            <span className="sarala-bold">{card.title}</span>
+                            <span className="icon">
                                 <svg
-                                    id="arrow-horizontal"
                                     xmlns="http://www.w3.org/2000/svg"
-                                    width="30"
-                                    height="10"
-                                    viewBox="0 0 46 16"
+                                    viewBox="0 0 448 512"
+                                    className="svg-icon"
                                 >
                                     <path
-                                        id="Path_10"
-                                        data-name="Path 10"
-                                        d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
-                                        transform="translate(30)"
-                                        fill="white"
+                                        d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
                                     ></path>
                                 </svg>
+                            </span>
+                        </Link>
+                        {/* <p className="text-[12px] sarala text-white">
+                        {card.description}
+                        </p> */}
 
-                            </Link>
-                        </div>
-                    ))}
-                </div>
-            ) : (
-                // Desktop Slider
-                <>
-                    <div className="left-slide" ref={slidesLeftRef}>
-                        {slidesData.leftSlides.map((slide, index) => (
-                            <div key={index} style={{ backgroundColor: slide.backgroundColor }}>
-                                <h1 className='text-5xl viaoda'>{slide.title}</h1>
-                                {/* <p>{slide.description}</p> */}
-                                <Link to={slide.link} className="cta my-4"
-                                >
-                                    <span className="hover-underline-animation text-blue-400"> Explore </span>
-                                    <svg
-                                        id="arrow-horizontal"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="30"
-                                        height="10"
-                                        viewBox="0 0 46 16"
-                                    >
-                                        <path
-                                            id="Path_10"
-                                            data-name="Path 10"
-                                            d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
-                                            transform="translate(30)"
-                                            fill="white"
-                                        ></path>
-                                    </svg>
+                    </motion.div>
+                ))}
 
-                                </Link>
-                            </div>
-                        ))}
-                    </div>
-                    <div className="right-slide" ref={slidesRightRef}>
-                        {slidesData.rightSlides.map((slide, index) => (
-                            <div key={index} className='flex outer' style={{ background: `url(${slide.imageUrl})`, backgroundSize: 'cover' }}>
-                                <div className='inner w-full flex justify-center items-center h-full bg-white m-auto'>
-                                    <div className='w-[80%] border-l-4 border-[#0D7DDD] bg-[#000000] bg-opacity-40 backdrop-blur-lg rounded-xl p-8'>
-                                        <p className='text-base text-justify text-white'>
-                                            {slide.description}
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                    <div className="action-buttons">
-                        <button className="up-button sl-btn" onClick={() => changeSlide('up')}>
-                            {/* Up Arrow SVG */}
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-up">
-                                <path d="m5 12 7-7 7 7" />
-                                <path d="M12 19V5" />
-                            </svg>
-                        </button>
-                        <button className="down-button sl-btn" onClick={() => changeSlide('down')}>
-                            {/* Down Arrow SVG */}
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-down">
-                                <path d="M12 5v14" />
-                                <path d="m19 12-7 7-7-7" />
-                            </svg>
-                        </button>
-                    </div>
-                </>
-            )}
-        </div>
+            </motion.div>
+        </Parallax>
     );
 };
 

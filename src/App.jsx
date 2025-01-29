@@ -20,6 +20,7 @@ import Completed from './Pages/Completed'
 import Ongoing from './Pages/Ongoing'
 import Upcoming from './Pages/Upcoming'
 import CompletedProjectDetails from './Pages/CompletedProjectDetails'
+import OngoingProjectDetails from './Pages/OngoingProjectDetails'
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
           <Route path="/completed-projects" element={<Completed />} />
           <Route path="/ongoing-projects" element={<Ongoing />} />
           <Route path="/completed-project-details/:projectId" element={<CompletedProjectDetails />} />
+          <Route path="/ongoing-project-details/:projectId" element={<OngoingProjectDetails />} />
           <Route path="/upcoming-projects" element={<Upcoming />} />
           <Route path="/details/:id" element={<PeopleDetails />} />
           <Route path="/committees" element={<BoardCommittees />} />

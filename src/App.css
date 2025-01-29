@@ -9,6 +9,12 @@
   font-family: "Sarala", sans-serif;
   font-style: normal;
 }
+.sarala-bold {
+  font-family: "Sarala", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 
 /* Viaoda Libre Font */
 .viaoda-libre-regular {
@@ -395,3 +401,61 @@ button:hover .glare-effect {
   transform-origin: bottom left;
 }
 
+
+
+/* From Uiverse.io by tomaskriegelstein */ 
+.pro-cta {
+  /* font-size: 50px; */
+  color: rgb(215, 215, 215);
+  /* font-weight: 400; */
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+  display: inline-flex;
+  align-items: center;
+}
+
+.pro-cta:focus,
+.pro-cta:hover {
+  color: white;
+}
+
+.pro-cta:hover:after {
+  width: 100%;
+  /* right: ; */
+  left: auto; /* Ensure left is auto to override the initial value */
+}
+
+.pro-cta:after {
+  content: "";
+  pointer-events: none;
+  bottom: -7px;
+  right: auto; /* Start from the right */
+  left: 0; /* Ensure left is auto to override the initial value */
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  background-color: #fff;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 500ms;
+  transition-property: width, right;
+}
+
+.svg-icon {
+  width: 0.9em;
+  height: 0.8em;
+  margin-left: 10px;
+  fill: rgb(215, 215, 215);
+  transform: rotate(-45deg);
+  transition: transform 0.5s ease-out;
+}
+
+.pro-cta:hover .svg-icon {
+  transform: rotate(0deg);
+  fill: white;
+}

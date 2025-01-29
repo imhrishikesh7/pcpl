@@ -63,9 +63,9 @@ const Completed = () => {
                   <p className="text-sm text-gray-600">
                     <span className="font-semibold text-gray-800">Location:</span> {property.Location}
                   </p>
-                  <p className="text-sm text-gray-600">
+                  {/* <p className="text-sm text-gray-600">
                     <span className="font-semibold text-gray-800">Configuration:</span> {property.Configuration}
-                  </p>
+                  </p> */}
                   {/* <p className="text-sm text-gray-600">
                     <span className="font-semibold text-gray-800">Price:</span> {property.Price}
                   </p>
