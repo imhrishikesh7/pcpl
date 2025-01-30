@@ -4,45 +4,14 @@ import GlobalCover from '../Components/GlobalCover';
 import { Link } from 'react-router-dom';
 
 const Ongoing = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 6; // Number of cards to show per page
-  const totalCards = ongoingProjectsData["Ongoing Project"].length;
-  const totalPages = Math.ceil(totalCards / cardsPerPage);
-
-  const startIndex = (currentPage - 1) * cardsPerPage;
-  const currentCards = ongoingProjectsData["Ongoing Project"].slice(
-    startIndex,
-    startIndex + cardsPerPage
-  );
-
-  // Handle page changes
-  const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
-
-  const handlePrevPage = () => {
-    if (currentPage > 1) setCurrentPage(currentPage - 1);
-  };
-
-  const handleNextPage = () => {
-    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
-  };
-
-  const handleFirstPage = () => {
-    setCurrentPage(1);
-  };
-
-  const handleLastPage = () => {
-    setCurrentPage(totalPages);
-  };
-
+  
   return (
     <div>
       <GlobalCover src="./our-properties/projects-cov.png" title="ONGOING PROJECTS" />
       <div className="container mx-auto px-4 py-12">
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {currentCards.map((property, index) => (
+          {ongoingProjectsData["Ongoing Project"].map((property, index) => (
             <div
               key={index}
               className="group relative bg-white shadow-lg overflow-hidden transition-transform duration-500 hover:scale-105"
@@ -80,53 +49,6 @@ const Ongoing = () => {
           ))}
         </div>
 
-        {/* Pagination Controls */}
-        <div className="flex justify-center mt-8 space-x-2">
-          <button
-            onClick={handleFirstPage}
-            disabled={currentPage === 1}
-            className={`px-4 py-2 rounded-full text-sm font-semibold border ${
-              currentPage === 1
-                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                : "bg-white text-gray-700 border-gray-300 hover:bg-[#004B8B] hover:text-white"
-            }`}
-          >
-            First
-          </button>
-          <button
-            onClick={handlePrevPage}
-            disabled={currentPage === 1}
-            className={`px-4 py-2 rounded-full text-sm font-semibold border ${
-              currentPage === 1
-                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                : "bg-white text-gray-700 border-gray-300 hover:bg-[#004B8B] hover:text-white"
-            }`}
-          >
-            Prev
-          </button>
-          <button
-            onClick={handleNextPage}
-            disabled={currentPage === totalPages}
-            className={`px-4 py-2 rounded-full text-sm font-semibold border ${
-              currentPage === totalPages
-                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                : "bg-white text-gray-700 border-gray-300 hover:bg-[#004B8B] hover:text-white"
-            }`}
-          >
-            Next
-          </button>
-          <button
-            onClick={handleLastPage}
-            disabled={currentPage === totalPages}
-            className={`px-4 py-2 rounded-full text-sm font-semibold border ${
-              currentPage === totalPages
-                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                : "bg-white text-gray-700 border-gray-300 hover:bg-[#004B8B] hover:text-white"
-            }`}
-          >
-            Last
-          </button>
-        </div>
       </div>
     </div>
   );

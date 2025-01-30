@@ -143,12 +143,25 @@ const CompletedProjectDetails = () => {
 
         return amenitiesText.split(',').map((item, index) => {
             const amenity = item.trim();
-            return amenitiesImages[amenity] ? (
+            const images = amenitiesImages[amenity]; // Get the images for the amenity
+        
+            if (!images) return null; // Skip if no image found
+        
+            return (
                 <div key={index} className="amenity-item">
-                    <img src={amenitiesImages[amenity]} />
+                    <div className="flex gap-2 flex-wrap"> {/* Flex container for side-by-side layout */}
+                        {Array.isArray(images) ? (
+                            images.map((imgSrc, imgIndex) => (
+                                <img key={imgIndex} src={imgSrc} alt={amenity} className="" />
+                            ))
+                        ) : (
+                            <img src={images} alt={amenity} className="" />
+                        )}
+                    </div>
                 </div>
-            ) : null;
-        }).filter(Boolean); // Removes `null` values
+            );
+        }).filter(Boolean);
+        
     };
 
     // Tabs configuration
