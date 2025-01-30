@@ -142,13 +142,12 @@ const CompletedProjectDetails = () => {
         };
 
         return amenitiesText.split(',').map((item, index) => {
-            {Array.isArray(images) ? (
-                images.map((imgSrc, imgIndex) => (
-                    <img key={imgIndex} src={imgSrc} alt={amenity} />
-                ))
-            ) : (
-                <img src={images} alt={amenity} />
-            )}
+            const amenity = item.trim();
+            return amenitiesImages[amenity] ? (
+                <div key={index} className="amenity-item">
+                    <img src={amenitiesImages[amenity]} />
+                </div>
+            ) : null;
         }).filter(Boolean); // Removes `null` values
     };
 
